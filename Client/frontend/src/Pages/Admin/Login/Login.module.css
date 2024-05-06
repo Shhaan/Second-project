@@ -1,0 +1,17 @@
+.innerdiv{
+    background-color: #7CA0D7;
+    border-radius: 4px;
+}
+
+.mainhead{
+    text-decoration: underline;
+}
+.inp{
+    background-color: #7CA0D7;
+}
+
+.inp:focus {
+    border-color: transparent transparent white transparent;
+    outline: none;
+    background-color: #6f97d4;
+}
