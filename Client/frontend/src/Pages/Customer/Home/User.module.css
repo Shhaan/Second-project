@@ -1,0 +1,343 @@
+.userHomeChild {
+    width: 310px;
+    height: 132px;
+    position: relative;
+    display: none;
+    z-index: 0;
+  }
+  .cascaArroz443a6b6b7dbd1cdd6cIcon {
+    width: 100%;
+    height: 571px;
+    position: relative;
+    margin: 0 !important;
+      
+    max-width: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .pricePerKg,
+  .userHomeItem {
+    position: relative;
+    display: none;
+  }
+  .userHomeItem {
+    width: 290px;
+    height: 340px;
+    border-radius: var(--br-4xs);
+    background-color: var(--color-forestgreen-100);
+    z-index: 5;
+  }
+  .pricePerKg {
+    min-width: 91px;
+    z-index: 6;
+  }
+  .locationGujarat {
+    font-size: var(--font-size-4xs);
+    min-width: 58px;
+    z-index: 7;
+  }
+  .corn,
+  .locationGujarat,
+  .userHomeInner {
+    position: relative;
+    display: none;
+  }
+  .corn {
+    font-size: var(--font-size-14xl);
+    color: var(--color-white);
+    min-width: 57px;
+    z-index: 8;
+  }
+  .userHomeInner {
+    width: 290px;
+    height: 340px;
+    border-radius: var(--br-4xs);
+    background-color: var(--color-forestgreen-100);
+    z-index: 9;
+  }
+  .rectangleDiv,
+  .reducingNitrogenOxidePollut {
+    width: 290px;
+    position: relative;
+    border-radius: var(--br-7xs) var(--br-7xs) 0 0;
+    display: none;
+  }
+  .rectangleDiv {
+    height: 156px;
+    background-color: var(--color-white);
+    z-index: 10;
+  }
+  .reducingNitrogenOxidePollut {
+    height: 155px;
+    object-fit: cover;
+    z-index: 11;
+  }
+  .farmerName {
+    position: relative;
+    display: none;
+    z-index: 12;
+  }
+  .cornIsA,
+  .toConsumeDaily {
+    margin: 0;
+  }
+  .cornIsAContainer {
+    position: relative;
+    font-size: var(--font-size-2xs);
+    color: #151212;
+    display: none;
+    z-index: 13;
+  }
+  .userHomeChild1 {
+    width: 290px;
+    height: 340px;
+    position: relative;
+    border-radius: var(--br-4xs);
+    background-color: var(--color-forestgreen-100);
+    display: none;
+    z-index: 14;
+  }
+  .polygonIcon,
+  .userHomeChild2 {
+    width: 319.1px;
+    height: 319.1px;
+    position: absolute;
+    margin: 0 !important;
+    top: 1770px;
+    right: 382.4px;
+    object-fit: contain;
+    z-index: 5;
+  }
+  .userHomeChild2 {
+    width: 387.5px;
+    height: 387.5px;
+    top: 1718.2px;
+    right: -97px;
+    z-index: 8;
+  }
+  .selling {
+    color: var(--color-forestgreen-100);
+    background-color: #F3EEEE;
+  }
+  .startSellingContainer {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+    z-index: 2;
+    width:50%;
+    display: flex;
+    background-color: #2FA84D;
+  }
+
+  .startSellingWrapper,
+  .userHome {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    font-family: var(--font-oswald);
+  }
+  .startSellingWrapper {
+    align-self: stretch;
+    flex-direction: row;
+    justify-content: center;
+    
+    font-size: var(--font-size-31xl);
+    color: var(--color-white);
+  }
+  .userHome {
+    width: 1440px;
+    background-color: var(--color-white);
+    max-width: 100%;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 0 85px;
+    box-sizing: border-box;
+    position: relative;
+    line-height: normal;
+    letter-spacing: normal;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-100);
+  }
+  @media screen and (max-width: 800px) {
+    .corn {
+      font-size: var(--font-size-7xl);
+    }
+    .startSellingContainer {
+      font-size: var(--font-size-21xl);
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .corn {
+      font-size: var(--font-size-xl);
+    }
+    .startSellingContainer {
+      font-size: var(--font-size-11xl);
+    }
+    .startSellingWrapper {
+      padding-left: var(--padding-xl);
+      box-sizing: border-box;
+    }
+  }
+  
+
+
+/* 
+user farmer laptop sectino */
+
+
+
+.frameChild {
+  width: 1440px;
+  height: 672px;
+  position: relative;
+  background-color: var(--color-seagreen);
+  display: none;
+  max-width: 100%;
+}
+.aboutUs {
+  margin: 0;
+  width: 318px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 10;
+}
+.aboutUsWrapper {
+  width: 877px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 0 0 var(--padding-80xl);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.premiumPhotoYoungIndianA {
+  position: absolute;
+  top: 27px;
+  left: 447px;
+  width: 430px;
+  height: 478px;
+  object-fit: cover;
+  z-index: 10;
+}
+.frameItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-salmon);
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.frameInner {
+  position: absolute;
+  top: 27px;
+  left: 10px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  width: 8px;
+  height: 11px;
+  z-index: 12;
+}
+.rectangleGroup {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-salmon);
+  width: 490px;
+  z-index: 11;
+  font-size: 23px;
+  padding: 12px;
+}
+.premiumPhotoYoungIndianAParent {
+  width: 877px;
+  height: 531px;
+  position: relative;
+  max-width: 100%;
+}
+.rectangleParent {
+  flex: 1;
+  background-color: var(--color-seagreen);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-xs) var(--padding-xl) var(--padding-26xl)
+    var(--padding-192xl);
+  box-sizing: border-box;
+  gap: var(--gap-3xs);
+  max-width: 100%;
+  z-index: 9;
+}  
+.frameParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-184xl);
+  box-sizing: border-box;
+  position: relative;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-31xl);
+  color: var(--color-white);
+  font-family: var(--font-oswald);
+}
+@media screen and (max-width: 1100px) {
+  .rectangleParent {
+    padding-left: var(--padding-86xl);
+    box-sizing: border-box;
+  }
+  .frameParent {
+    padding-bottom: var(--padding-113xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 800px) {
+  .aboutUs {
+    font-size: var(--font-size-21xl);
+  }
+  .rectangleParent {
+    padding-left: var(--padding-33xl);
+    padding-top: var(--padding-xl);
+    padding-bottom: var(--padding-10xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .aboutUs {
+    font-size: var(--font-size-11xl);
+  }
+  .aboutUsWrapper,
+  .rectangleParent {
+    padding-left: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .frameParent {
+    padding-bottom: var(--padding-67xl);
+    box-sizing: border-box;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
