@@ -7,9 +7,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from '../../../Config/Axios'
 import { useDispatch, useSelector } from 'react-redux';
 import {UserLogLoading,UserRegistered,UserRegistrationerr,UserisFarmer} from '../../../Slices/UserSlice'
+import onGoogleLoginSuccess from '../../../Components/GoogleLoginbutton/Googlebutton'
+
 const Login = () => {
 
-  const {user,isFarmer, loading, isAuthenticated,error}= useSelector(state=>state.UserSlice)
+  const {user,isFarmer, loading, isAuthenticated,error}= useSelector(state=>state.user)
 
 
   const [data,setData] = useState({Email:'',password:''})
@@ -37,9 +39,11 @@ const Login = () => {
     }
     try{ 
       dispatch(UserLogLoading())
+        
        const response = await axios.post('api/token/',data)
 
-          
+           
+
     if (response.status ==200){
      
       localStorage.setItem('access_token',response.data.access)
@@ -47,38 +51,56 @@ const Login = () => {
  
         const accessToken = localStorage.getItem('access_token');
             
-        const getuser = await axios.get('currentuser/', {
+        const getuser = await axios.get(`currentuser/`, {
           headers: {
               'Authorization': `Bearer ${accessToken}`
           }
         })
-
         
+          
+        if( getuser.status ==200){
       dispatch(UserRegistered(getuser.data))
        
       
-      if (user[0].is_staff){
-        dispatch(UserisFarmer())
-      }
+        if(getuser.data['is_staff'] && !getuser.data['is_superuser']) {
+           dispatch(UserisFarmer())
+           navigate('/farmer')}
+          else{
+      navigate('/')}}} }
+    catch(e){ 
+      dispatch(UserRegistrationerr(e.response.data.detail))
+    
+    console.log(e);}}
 
-
-      }
-
-      navigate('/')
-
-    }
-    catch(e){
-
-      dispatch(UserRegistrationerr(e.response.data))
+    useEffect(()=>{
+         
+      const fetchUser = async()=>{
         
+        try{
+          const accessToken  = localStorage.getItem('access_token')
+           
+        const user = await axios('currentuser/',{
+          headers: {
+            'Authorization': `Bearer ${accessToken}`
+        }
+         
+        })
 
-    }
+        if(user.status==200){
+          navigate('/')
+
+        }
+
+  
+      console.log(user)
     
-
-    
-
-
-  }
+     }
+        catch(e){
+          console.log(e);
+        }
+      }
+      fetchUser()
+    },[])
 
   return ( 
     <React.Fragment>
@@ -105,10 +127,10 @@ const Login = () => {
 
          <hr className={logincss.sepraterhr}/>
          <h1 className={logincss.seprateh1}>or</h1>
-         <hr className={logincss.sepraterhr}/>
+         <hr className={logincss.sepraterhr}/> 
 
          </div>
-         <div >
+         <div onClick={()=>onGoogleLoginSuccess(false)}>
           <img src={google} alt="google" className={logincss.googleimg} />
          <button id={logincss.google} className={logincss.button}>Authenticate with google</button></div>
          </div></form>

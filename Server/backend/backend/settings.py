@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     'adminAuth',
     'customerAuth',
     'farmerAuth',
+    'googleAuth',
+    'AdminMain',
+    
 ]
 
 MIDDLEWARE = [
@@ -115,6 +118,8 @@ USE_I18N = True
 USE_TZ = True
 
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
@@ -134,11 +139,17 @@ REST_FRAMEWORK = {
 
 
 SIMPLE_JWT = {
-     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=10),
+     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
      'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
       
 }
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000',
+]
  
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
@@ -147,8 +158,29 @@ CORS_ORIGIN_WHITELIST = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+STRIP_KEY = 'sk_test_51PHrgtSE9Hs6vPUhuB9gZrHF55o0kFWZ7X8EV2GbT5JFjfoNxLTQXgGTWEuQaBMQ78d069kaxlc5OZ3YjmnLH7mw00qW6kAiYr'
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = "/media/"
 AUTH_USER_MODEL = "customerAuth.Customers"
+
+ 
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "shanmohamme.123@gmail.com"
+EMAIL_HOST_PASSWORD = "nfsq ywqv lwva zlod"
+
+
+# google auth
+ 
+BASE_APP_URL = "http://localhost:3000"
+BASE_API_URL = "http://127.0.0.1:8000/"
+BASE_APP_URL_FARMER = "http://localhost:3000/farmer/"
+BASE_APP_URL_CUSTOMER_REGISTER = "http://localhost:3000/register/"
+
+GOOGLE_OAUTH2_CLIENT_ID = '64469589733-m3hqdmjm2rf9ucihqqpgbhjjn86t0k8e.apps.googleusercontent.com'
+GOOGLE_OAUTH2_CLIENT_SECRET = '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'
+

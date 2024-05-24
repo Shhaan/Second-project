@@ -15,4 +15,18 @@ const reducerRegister = (state,action)=>{
     
 }
 
-export {reducerRegister}
+
+const categoryreducer =(state,action)=>{
+          switch(action.type){
+            case 'AddCategory':
+                return {
+                    ...state,
+                    [action.field] :action.value
+                }
+          }
+
+}
+
+
+
+export {reducerRegister,categoryreducer}

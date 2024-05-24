@@ -3,9 +3,9 @@ import UserSlice from './Slices/UserSlice'
 
 const store = configureStore({
     reducer:{
-        UserSlice,
+        'user':UserSlice,
         
-    }
+    }, 
 })
 
 export default store

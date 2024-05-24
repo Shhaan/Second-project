@@ -27,7 +27,7 @@ class Customers(AbstractBaseUser,PermissionsMixin):
     First_name = models.CharField(max_length=50,null=False)
     Last_name = models.CharField(max_length=50)
     Email = models.EmailField(max_length=254,null=False,blank=False,unique=True)
-    Phone_number = models.IntegerField()
+    Phone_number = models.BigIntegerField(null=True)
     is_blocked =  models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
@@ -36,8 +36,19 @@ class Customers(AbstractBaseUser,PermissionsMixin):
     State = models.CharField(max_length=50,null=True)
     District = models.CharField(max_length=50,null=True)
     postal_code = models.IntegerField(null=True)
-    
+    is_verified = models.BooleanField(default=False)
+    otp = models.CharField(null=True,blank =True, max_length=4)
     Created_at = models.DateField(auto_now=False, auto_now_add=True)
+    REGISTRATION_CHOICES = [
+        ('email', 'Email'),
+        ('google', 'Google'),
+    ] 
+    
+    registration_method = models.CharField(
+        max_length=10,
+        choices=REGISTRATION_CHOICES,
+        default='email'
+    )
     objects = MyUserManager()
     
     USERNAME_FIELD = "Email"

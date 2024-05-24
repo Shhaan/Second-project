@@ -5,8 +5,22 @@ import AdminRegistercss from './RegTransaction.module.css'
 import Bg from '../../../Asset/Image/bgreg.jpg'
 
 import logincss from '../../Customer/Login/Login.module.css'
+import axios from 'axios'
+import CheckoutForm from '../../../Components/CheckoutForm/CheckoutForm'
+
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from "@stripe/stripe-js/pure"; 
+import { useLocation } from 'react-router-dom'
+
+const stripePromise = loadStripe('pk_test_51PHrgtSE9Hs6vPUh2zGbfwqeRzdEK7BPjzeRTFLA8TQ67foGaBWYlvwCRUv9uxSirbq4xQqk828QfKKbcrlbX5Ss00Y2GSWCKv');
+
 
 const RegTransaction = () => {
+   
+  const location = useLocation();
+       
+
+
   return (
     <React.Fragment>
          <Header admin={false}/>
@@ -21,10 +35,9 @@ const RegTransaction = () => {
   <h2>Please pay with any transaction method listed below</h2>
    
    <div className={`${AdminRegistercss.mainflexdiv} col-9`}>
-      <div className='bg-white' style={{height: '41px',padding:'10px'}}>Paypal</div>
-      <div className='bg-white' style={{height: '41px',padding:'10px'}}>Razor pay</div>
-      <div className='bg-white' style={{height: '41px',padding:'10px'}}>Google pay</div>
-
+    
+      <Elements stripe={stripePromise}>
+ <CheckoutForm otp={location.state.otp} /></Elements>
    </div>
 
 </div>
@@ -38,7 +51,6 @@ const RegTransaction = () => {
             <div className={logincss.footer}></div>
     </React.Fragment>
   )
-}
-
+} 
 
 export default RegTransaction

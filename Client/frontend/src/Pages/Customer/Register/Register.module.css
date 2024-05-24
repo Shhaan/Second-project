@@ -45,3 +45,10 @@
 .width40{
     width:40% ;
 }
+
+.error{
+    color: red;
+    
+    font-size: 10px;
+    
+}

@@ -26,10 +26,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin-django/', admin.site.urls),
     path('',include(('customerAuth.urls',"cutomerAuthUrls"),namespace="cutomerAuthUrls")),
     
-    # path(include(('adminAuth.urls',"adminAuthUrls"),namespace="adminAuthUrls")),
+    path('admin/',include(('adminAuth.urls',"adminAuthUrls"),namespace="adminAuthUrls")),
+    path('farmer/',include(('farmerAuth.urls',"farmerAuthUrls"),namespace="farmerAuthUrls")),
+    path('admin-main/',include(('AdminMain.urls',"AdminMainAuthUrls"),namespace="AdminMainAuthUrls")),
+    
+    path('google/',include(('googleAuth.urls',"googleAuthUrls"),namespace="googleAuthUrls")),
+    
+    
+    
     
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),

@@ -4,18 +4,20 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {   
     isAuthenticated:false,
     isFarmer:false,
-    user:null,
+    user:{},
     loading:false,
     error:null,
     }
 
 
 const UserSlice = createSlice({
-    name:'UserSlice',
+    name:'user',
     initialState,
     reducers: {
         UserLogLoading: (state) => {
+            
             state.loading = true;
+            state.error = null;
         },
         UserisFarmer: (state) => {
             state.isFarmer = true;
@@ -27,6 +29,7 @@ const UserSlice = createSlice({
         },
         UserRegistrationerr: (state, action) => {
             state.error = action.payload;
+            state.loading = false;
         }
     }
 })
