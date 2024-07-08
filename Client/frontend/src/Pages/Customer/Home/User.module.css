@@ -1,0 +1,1035 @@
+/* header */
+.userHomeChild {
+ 
+    background-color: var(--color-seagreen);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.headerMainFlex{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+}
+.headerFlex{
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+} 
+
+
+ 
+.userHomeItem {
+  top: 30px;
+  left: 1303px;
+  border-radius: 12px;
+  background-color: var(--color-forestgreen-100);
+  width: 105px;
+  height: 35px;
+  transform: rotate(-0.5deg);
+  transform-origin: 0 0;
+  cursor: pointer;
+  text-align:center;
+}
+ 
+.user {
+  top: 29.5px;
+  left: 1335.2px;
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+} 
+
+ 
+   
+.userHomeInner {
+  
+  width: 310px;
+  height: 132px;
+}
+.farmers {
+  
+  cursor: pointer;
+}
+.cascaArroz443a6b6b7dbd1cdd6cIcon {
+  
+  width:100%;;
+  height: 571px;
+  object-fit: cover;
+}
+.fromFieldTo {
+  
+  font-size: 39px;
+  font-family: var(--font-otomanopee-one);
+}
+.rectangleDiv {
+  
+  background-color: var(--color-seagreen);
+  width:100%;;
+  height: 626px;
+}
+.meetOurFarmers {
+   
+  font-size: var(--font-size-31xl);
+  color: var(--color-black);
+}
+.featuredItems {
+  margin: auto;
+  display: block;
+  font-size: 56px;
+  width: 316px;
+  height: 91px;
+}
+.userHomeChild1 {
+   
+  border-radius: var(--br-4xs);
+  background-color: var(--color-forestgreen-100);
+  width: 290px;
+  height: 340px;
+}
+.locationGujarat,
+.pricePerKg {
+  
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-100);
+}
+.locationGujarat {
+  
+  font-size: var(--font-size-4xs);
+}
+.corn {
+  
+  font-size: var(--font-size-14xl);
+}
+.userHomeChild2 {
+ 
+  border-radius: var(--br-4xs);
+  background-color: var(--color-forestgreen-100);
+  width: 290px;
+  height: 340px;
+}
+.reducingNitrogenOxidePollut,
+.userHomeChild3 {
+   
+  border-radius: var(--br-7xs) var(--br-7xs) 0 0;
+  width: 290px;
+}
+.userHomeChild3 {
+ 
+  background-color: var(--color-white);
+  height: 156px;
+}
+.reducingNitrogenOxidePollut {
+  
+  height: 155px;
+  object-fit: cover;
+}
+.farmerName { 
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-100);
+}
+.cornIsA {
+  margin: 0;
+}
+.cornIsAContainer {
+  position: static;
+  top: 1184px;
+  left: 116px;
+  font-size: var(--font-size-2xs);
+  color: #151212;
+}
+.corn1,
+.locationGujarat1,
+.pricePerKg1 {
+  position: static;
+  top: 1272px;
+  left: 128px;
+  font-size: var(--font-size-sm);
+}
+.corn1,
+.locationGujarat1 {
+  top: 1308px;
+  font-size: var(--font-size-4xs);
+}
+.corn1 {
+  top: 1141px;
+  left: 217px;
+  font-size: var(--font-size-14xl);
+  color: var(--color-black);
+}
+.reducingNitrogenOxidePollut1 {
+  position: static;
+  top: 989px;
+  left: 105px;
+  border-radius: var(--br-7xs) var(--br-7xs) 0 0;
+  width: 290px;
+  height: 155px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.farmerName1,
+.veriatyField {
+  position: static;
+  top: 1227px;
+  left: 127px;
+  font-size: var(--font-size-sm);
+}
+.veriatyField {
+  top: 1251px;
+}
+.cornIsAContainer1 {
+  position: static;
+  top: 1184px;
+  left: 116px;
+  font-size: var(--font-size-2xs);
+}
+.pricePerKg2,
+.veriatyField1 {
+  position: static;
+  top: 1251px;
+  left: 579px;
+  font-size: var(--font-size-sm);
+}
+.pricePerKg2 {
+  top: 1277px;
+  left: 581px;
+}
+.corn2,
+.locationGujarat2 {
+  position: static;
+  top: 1298px;
+  left: 582px;
+  font-size: var(--font-size-4xs);
+}
+.corn2 {
+  top: 1141px;
+  left: 671px;
+  font-size: var(--font-size-14xl);
+  color: var(--color-black);
+}
+.reducingNitrogenOxidePollut2,
+.userHomeChild7 {
+  position: static;
+  left: 559px;
+  border-radius: var(--br-7xs) var(--br-7xs) 0 0;
+  width: 290px;
+}
+.userHomeChild7 {
+  top: 988px;
+  background-color: var(--color-white);
+  height: 156px;
+}
+.reducingNitrogenOxidePollut2 {
+  top: 989px;
+  height: 155px;
+  object-fit: cover;
+}
+.farmerName2 {
+  position: static;
+  top: 1227px;
+  left: 581px;
+  font-size: var(--font-size-sm);
+}
+.cornIsAContainer2 {
+  position: static;
+  top: 1184px;
+  left: 570px;
+  font-size: var(--font-size-2xs);
+}
+.userHomeChild8 {
+  position: static;
+  top: 996px;
+  left: 1024px;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-forestgreen-100);
+  width: 290px;
+  height: 340px;
+}
+.corn3,
+.locationGujarat3,
+.pricePerKg3,
+.veriatyField2 {
+  position: static;
+  top: 1257px;
+  left: 1047px;
+  font-size: var(--font-size-sm);
+}
+.corn3,
+.locationGujarat3,
+.pricePerKg3 {
+  top: 1283px;
+}
+.corn3,
+.locationGujarat3 {
+  top: 1307px;
+  font-size: var(--font-size-4xs);
+}
+.corn3 {
+  top: 1150px;
+  left: 1136px;
+  font-size: var(--font-size-14xl);
+  color: var(--color-black);
+}
+.reducingNitrogenOxidePollut3,
+.userHomeChild10 {
+  position: static;
+  left: 1024px;
+  border-radius: var(--br-7xs) var(--br-7xs) 0 0;
+  width: 290px;
+}
+.userHomeChild10 {
+  top: 997px;
+  background-color: var(--color-white);
+  height: 156px;
+}
+.reducingNitrogenOxidePollut3 {
+  top: 998px;
+  height: 155px;
+  object-fit: cover;
+}
+.farmerName3 {
+  position: static;
+  top: 1236px;
+  left: 1046px;
+  font-size: var(--font-size-sm);
+}
+.cornIsAContainer3 {
+  position: static;
+  top: 1193px;
+  left: 1035px;
+  font-size: var(--font-size-2xs);
+}
+.feelTheFreshness {
+  position: static;
+  top: 490px;
+  left: 52px;
+  font-size: 40px;
+}
+.userHomeChild11 {
+  position: static;
+  top: 234px;
+  left: 882px;
+  background-color: #77e87b;
+  width: 453px;
+  height: 571px;
+  opacity: 0.81;
+}
+.startCultivating {
+  position: static;
+  top: 311px;
+  left: 925px;
+  font-size: 36px;
+}
+.ellipseDiv,
+.mangoMixBoxPreOrderFor2 {
+  position: static;
+  left: 941px;
+  width: 79px;
+}
+.mangoMixBoxPreOrderFor2 {
+  top: 388px;
+  border-radius: var(--br-197xl);
+  height: 76px;
+  object-fit: cover;
+}
+.ellipseDiv {
+  top: 387px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  height: 78px;
+  opacity: 0.74;
+}
+.mango {
+  position: static;
+  top: 408px;
+  left: 955px;
+  color: var(--color-black);
+  opacity: 0.56;
+}
+.mangoMixBoxPreOrderFor23 {
+  position: static;
+  top: 628px;
+  left: 941px;
+  border-radius: var(--br-197xl);
+  width: 79px;
+  height: 76px;
+  object-fit: cover;
+}
+.userHomeChild14 {
+  position: static;
+  top: 627px;
+  left: 941px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  width: 79px;
+  height: 78px;
+  opacity: 0.74;
+}
+.mango3 {
+  position: static;
+  top: 648px;
+  left: 955px;
+  color: var(--color-black);
+  opacity: 0.56;
+}
+.mangoMixBoxPreOrderFor26 {
+  position: static;
+  top: 629px;
+  left: 1211px;
+  border-radius: var(--br-197xl);
+  width: 79px;
+  height: 76px;
+  object-fit: cover;
+}
+.userHomeChild17 {
+  position: static;
+  top: 628px;
+  left: 1211px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  width: 79px;
+  height: 78px;
+  opacity: 0.74;
+}
+.mango6 {
+  position: static;
+  top: 649px;
+  left: 1225px;
+  color: var(--color-black);
+  opacity: 0.56;
+}
+.mangoMixBoxPreOrderFor29 {
+  position: static;
+  top: 521px;
+  left: 1109px;
+  border-radius: var(--br-197xl);
+  width: 79px;
+  height: 76px;
+  object-fit: cover;
+}
+.userHomeChild20 {
+  position: static;
+  top: 520px;
+  left: 1109px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  width: 79px;
+  height: 78px;
+  opacity: 0.74;
+}
+.mango9 {
+  position: static;
+  top: 541px;
+  left: 1123px;
+  color: var(--color-black);
+  opacity: 0.56;
+}
+.mangoMixBoxPreOrderFor212 {
+  position: static;
+  top: 386px;
+  left: 1141px;
+  border-radius: var(--br-197xl);
+  width: 79px;
+  height: 76px;
+  object-fit: cover;
+}
+.userHomeChild23 {
+  position: static;
+  top: 385px;
+  left: 1141px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  width: 79px;
+  height: 78px;
+  opacity: 0.74;
+}
+.mango12 {
+  position: static;
+  top: 406px;
+  left: 1155px;
+  color: var(--color-black);
+  opacity: 0.56;
+}
+.polygonIcon,
+.premiumPhotoYoungIndianF {
+  position: static;
+  top: 1632px;
+  left: 33px;
+  width: 433px;
+  height: 351px;
+  object-fit: cover;
+}
+.polygonIcon {
+  top: 1719.2px;
+  left: 201.5px;
+  width: 387.5px;
+  height: 387.5px;
+  object-fit: contain;
+}
+.sudeerDas {
+  position: static;
+  top: 1775px;
+  left: 46px;
+  font-size: var(--font-size-24xl);
+}
+.itemstomatorice {
+  position: static;
+  top: 1891px;
+  left: 49px;
+  font-size: 25px;
+}
+.knownForLarge {
+  position: static;
+  top: 1839px;
+  left: 46px;
+  font-size: var(--font-size-9xl);
+}
+.premiumPhotoYoungIndianF1 {
+  position: static;
+  top: 1631px;
+  left: 517px;
+  width: 433px;
+  height: 351px;
+  object-fit: cover;
+}
+.knownForLarge1 {
+  position: static;
+  top: 1826px;
+  left: 555px;
+  font-size: var(--font-size-9xl);
+}
+.userHomeChild24 {
+  position: static;
+  top: 1770px;
+  left: 738.5px;
+  width: 319.1px;
+  height: 319.1px;
+  object-fit: contain;
+}
+.sudeerDas1 {
+  position: static;
+  top: 1750px;
+  left: 558px;
+  font-size: var(--font-size-24xl);
+  cursor: pointer;
+}
+.itemstomatorice1 {
+  position: static;
+  top: 1892px;
+  left: 558px;
+  font-size: var(--font-size-9xl);
+}
+.premiumPhotoYoungIndianF2 {
+  position: static;
+  top: 1631px;
+  left: 979px;
+  width: 433px;
+  height: 351px;
+  object-fit: cover;
+}
+.knownForLarge3 {
+  position: static;
+  top: 1834px;
+  left: 994px;
+  font-size: var(--font-size-9xl);
+}
+.userHomeChild25 {
+  position: static;
+  top: 1718.2px;
+  left: 1149.5px;
+  width: 387.5px;
+  height: 387.5px;
+  object-fit: contain;
+}
+.itemstomatorice2,
+.sudeerDas2 {
+  position: static;
+  top: 1774px;
+  left: 994px;
+  font-size: var(--font-size-24xl);
+}
+.itemstomatorice2 {
+  top: 1889px;
+  font-size: var(--font-size-9xl);
+}
+.userHomeChild26,
+.userHomeChild27 {
+  position: static;
+  top: 2077px;
+  left: 0;
+  background-color: var(--color-seagreen);
+  width:100%;;
+  height: 672px;
+}
+.userHomeChild27 {
+  top: 3261px;
+  background-color: var(--color-whitesmoke);
+}
+.premiumPhotoYoungIndianA {
+  position: static;
+  top: 2200px;
+  left: 824px;
+  width: 430px;
+  height: 478px;
+  object-fit: cover;
+}
+.userHomeChild28 {
+  position: static;
+  top: 2173px;
+  left: 377px;
+  background-color: #d36c4e;
+  width: 490px;
+  height: 531px;
+}
+.aboutUs {
+  position: static;
+  top: 2089px;
+  left: 706px;
+  font-size: var(--font-size-31xl);
+  display: inline-block;
+  width: 318px;
+}
+.userHomeChild29 {
+  position: static;
+  top: 2200px;
+  left: 387px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  width: 8px;
+  height: 11px;
+}
+.userHomeChild30,
+.userHomeChild31 {
+  position: static;
+  top: 2921px;
+  left: 243px;
+  background-color: var(--color-forestgreen-100);
+  width: 518px;
+  height: 162px;
+  cursor: pointer;
+}
+.userHomeChild31 {
+  top: 2922px;
+  left: 761px;
+  background-color: var(--color-whitesmoke);
+  width: 523px;
+  height: 161px;
+}
+.selling {
+  color: var(--color-forestgreen-100);
+}
+.startSellingContainer {
+  position: static;
+  top: 2952px;
+  left: 662px;
+  font-size: var(--font-size-31xl);
+}
+.howFarmaidMake,
+.keyFeatures {
+  position: static;
+  font-family: var(--font-ropa-sans);
+  color: var(--color-black);
+}
+.keyFeatures {
+  top: 4002px;
+  left: 580px;
+  font-size: var(--font-size-44xl);
+  display: inline-block;
+  width: 339px;
+  height: 70px;
+}
+.howFarmaidMake {
+  top: 4108px;
+  left: 477px;
+  font-size: var(--font-size-11xl);
+  white-space: pre-wrap;
+}
+.userHomeChild32,
+.userHomeChild33,
+.userHomeChild34 {
+  position: static;
+  top: 4218px;
+  left: 149px;
+  border-radius: 50%;
+  background-color: var(--color-seagreen);
+  width: 279px;
+  height: 268px;
+}
+.userHomeChild33,
+.userHomeChild34 {
+  left: 614px;
+}
+.userHomeChild34 {
+  left: 1054px;
+}
+.userfriendly62cf507c1c2ba82b4Icon {
+  position: static;
+  top: 4238px;
+  left: 1098px;
+  width: 192px;
+  height: 196px;
+  object-fit: cover;
+}
+.transparency22c9e5d80505d72e6Icon {
+  position: static;
+  top: 4241px;
+  left: 177px;
+  width: 222px;
+  height: 222px;
+  object-fit: cover;
+  mix-blend-mode: normal;
+}
+.directTransactionsBetween,
+.fairTrade,
+.transparency {
+  position: static;
+  top: 4519px;
+  left: 112px;
+  font-size: var(--font-size-41xl);
+  color: var(--color-gray-200);
+  display: inline-block;
+  width: 384px;
+}
+.directTransactionsBetween,
+.fairTrade {
+  top: 4635px;
+  left: 162px;
+  font-size: var(--font-size-8xl);
+  color: var(--color-forestgreen-100);
+  width: 344px;
+}
+.fairTrade {
+  top: 4520px;
+  left: 612px;
+  font-size: var(--font-size-41xl);
+  color: var(--color-gray-200);
+  width: 333px;
+}
+.redistributionOfValue,
+.reduceCostsTo,
+.userFriendly {
+  position: static;
+  top: 4636px;
+  left: 593px;
+  font-size: var(--font-size-8xl);
+  color: var(--color-forestgreen-100);
+  display: inline-block;
+  width: 344px;
+}
+.reduceCostsTo,
+.userFriendly {
+  top: 4512px;
+  left: 1037px;
+  font-size: var(--font-size-41xl);
+  color: var(--color-gray-200);
+  width: 367px;
+}
+.reduceCostsTo {
+  top: 4628px;
+  left: 1052px;
+  font-size: var(--font-size-8xl);
+  color: var(--color-forestgreen-100);
+  width: 344px;
+}
+.fairtrade6f557826462666cbfa5bIcon {
+  position: static;
+  top: 4229px;
+  left: 673px;
+  width: 178px;
+  height: 213px;
+  object-fit: cover;
+}
+.category1 {
+  position: static;
+  top: 3282px;
+  left: 606px;
+  font-size: 70px;
+  color: var(--color-black);
+}
+.foodieInstagramAccountsThat {
+  position: static;
+  top: 3498px;
+  left: 193px;
+  border-radius: var(--br-57xl) 0 var(--br-69xl) 0;
+  width: 223px;
+  height: 197px;
+  object-fit: cover;
+}
+.fruits,
+.userHomeChild35 {
+  position: static;
+  transform-origin: 0 0;
+}
+.userHomeChild35 {
+  top: 3647.3px;
+  left: 197px;
+  background-color: var(--color-forestgreen-200);
+  width: 228px;
+  height: 53px;
+  transform: rotate(-40deg);
+}
+.fruits {
+  top: 3615.7px;
+  left: 227.3px;
+  font-size: var(--font-size-44xl);
+  font-family: var(--font-ropa-sans);
+  color: var(--color-gray-300);
+  transform: rotate(-41deg);
+}
+.foodieInstagramAccountsThat1 {
+  position: static;
+  top: 3501px;
+  left: 627px;
+  border-radius: var(--br-57xl) 0 var(--br-69xl) 0;
+  width: 223px;
+  height: 197px;
+  object-fit: cover;
+}
+.fruits1,
+.userHomeChild36 {
+  position: static;
+  transform-origin: 0 0;
+}
+.userHomeChild36 {
+  top: 3650.3px;
+  left: 631px;
+  background-color: var(--color-forestgreen-200);
+  width: 228px;
+  height: 53px;
+  transform: rotate(-40deg);
+}
+.fruits1 {
+  top: 3618.7px;
+  left: 661.3px;
+  font-size: var(--font-size-44xl);
+  font-family: var(--font-ropa-sans);
+  color: var(--color-gray-300);
+  transform: rotate(-41deg);
+}
+.foodieInstagramAccountsThat2 {
+  position: static;
+  top: 3491px;
+  left: 1008px;
+  border-radius: var(--br-57xl) 0 var(--br-69xl) 0;
+  width: 223px;
+  height: 197px;
+  object-fit: cover;
+}
+.fruits2,
+.userHomeChild37 {
+  position: static;
+  transform-origin: 0 0;
+}
+.userHomeChild37 {
+  top: 3640.3px;
+  left: 1012px;
+  background-color: var(--color-forestgreen-200);
+  width: 228px;
+  height: 53px;
+  transform: rotate(-40deg);
+}
+.fruits2 {
+  top: 3608.7px;
+  left: 1042.3px;
+  font-size: var(--font-size-44xl);
+  font-family: var(--font-ropa-sans);
+  color: var(--color-gray-300);
+  transform: rotate(-41deg);
+}
+.fruitsAreCommonly,
+.fruitsAreCommonly1 {
+  font-size: var(--font-size-xl);
+  display: inline-block;
+  width: 332px;
+}
+.fruitsAreCommonly {
+  position: static;
+  top: 3738px;
+  left: 145px;
+  font-family: var(--font-ropa-sans);
+  color: var(--color-black);
+}
+.fruitsAreCommonly1 {
+  top: 3742px;
+  left: 573px;
+}
+.faq,
+.fruitsAreCommonly1,
+.fruitsAreCommonly2 {
+  position: static;
+  font-family: var(--font-ropa-sans);
+  color: var(--color-black);
+}
+.fruitsAreCommonly2 {
+  top: 3734px;
+  left: 1001px;
+  font-size: var(--font-size-xl);
+  display: inline-block;
+  width: 332px;
+}
+.faq {
+  top: 4934px;
+  left: 667px;
+  font-size: var(--font-size-44xl);
+}
+.userHomeChild38,
+.userHomeChild39,
+.userHomeChild40,
+.userHomeChild41 {
+  position: static;
+  top: 5141px;
+  left: 148px;
+  background-color: var(--color-seagreen);
+  width: 1185px;
+  height: 152px;
+}
+.userHomeChild39,
+.userHomeChild40,
+.userHomeChild41 {
+  top: 5675px;
+}
+.userHomeChild40,
+.userHomeChild41 {
+  top: 5865px;
+}
+.userHomeChild41 {
+  top: 5288px;
+  background-color: var(--color-forestgreen-100);
+  height: 335px;
+}
+.buyingFromLocal,
+.howAreOrders,
+.howAreThe,
+.whyShouldI {
+  position: static;
+  top: 5180px;
+  left: 188px;
+  font-size: var(--font-size-31xl);
+}
+.buyingFromLocal,
+.howAreOrders,
+.howAreThe {
+  top: 5714px;
+}
+.buyingFromLocal,
+.howAreOrders {
+  top: 5912px;
+}
+.buyingFromLocal {
+  top: 5339px;
+  left: 192px;
+  font-size: var(--font-size-11xl);
+  display: inline-block;
+  width: 1130px;
+}
+.userHomeChild42 {
+  position: static;
+  top: 6313px;
+  left: 0;
+  background-color: var(--color-seagreen);
+  width:100%;;
+  height: 457px;
+}
+.farmer {
+  position: static;
+  top: 6483px;
+  left: 97px;
+  width: 77px;
+}
+.aboutUs1,
+.farmer,
+.market1 {
+  font-size: var(--font-size-8xl);
+  display: inline-block;
+  height: 31px;
+}
+.market1 {
+  position: static;
+  top: 6595px;
+  left: 97px;
+  width: 77px;
+}
+.aboutUs1 {
+  top: 6651px;
+  width: 94px;
+}
+.aboutCrops,
+.aboutUs1,
+.menu {
+  position: static;
+  left: 97px;
+}
+.aboutCrops {
+  top: 6539px;
+  font-size: var(--font-size-8xl);
+  display: inline-block;
+  width: 128px;
+  height: 31px;
+}
+.menu {
+  top: 6381px;
+  font-size: var(--font-size-16xl);
+  text-decoration: underline;
+}
+.fruits3,
+.grains,
+.nuts,
+.vegitable {
+  position: static;
+  top: 6483px;
+  left: 671px;
+  font-size: var(--font-size-8xl);
+  display: inline-block;
+  width: 57px;
+  height: 32px;
+}
+.grains,
+.nuts,
+.vegitable {
+  top: 6595px;
+  width: 64px;
+}
+.nuts,
+.vegitable {
+  top: 6651px;
+  width: 46px;
+}
+.vegitable {
+  top: 6539px;
+  width: 95px;
+}
+.category2,
+.contactUs1 {
+  position: static;
+  top: 6381px;
+  left: 671px;
+  font-size: var(--font-size-16xl);
+  text-decoration: underline;
+}
+.contactUs1 {
+  top: 6391px;
+  left: 1169px;
+}
+.div,
+.farmaidgmailcom {
+  position: static;
+  top: 6484px;
+  left: 1158px;
+  font-size: var(--font-size-8xl);
+}
+.div {
+  top: 6542px;
+  left: 1185px;
+}
+.userHome {
+  width:100%;;
+  background-color: var(--color-white);
+  max-width: 100%;
+  height: 6855px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-lgi);
+  color: var(--color-white);
+  font-family: var(--font-oswald);
+}
