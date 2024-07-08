@@ -1,0 +1,10 @@
+.active {
+  color: #ffff3a !important;
+  display: contents;
+}
+
+.without-active {
+  display: contents;
+  color: white;
+  text-decoration: none;
+}

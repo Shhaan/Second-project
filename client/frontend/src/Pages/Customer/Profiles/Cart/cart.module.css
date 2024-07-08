@@ -1,0 +1,25 @@
+.innerdiv {
+  width: 46%;
+}
+
+.cartimage {
+  width: 55px;
+  height: 45px;
+  border-radius: 30px;
+}
+.cartdetaildiv {
+  display: grid;
+  color: white;
+  grid-template-columns: 1.5fr 1fr 1.5fr 1fr 1fr 1fr 1fr 1fr;
+
+  align-items: center;
+  gap: 27px;
+
+  margin-bottom: 30px;
+}
+.buybutton {
+  color: white;
+  border: navajowhite;
+  background: #5252f3;
+  border-radius: 21px;
+}

@@ -1,0 +1,22 @@
+.customfileuploaddiv {
+  padding-top: 4px;
+  border: #cfc1c1 solid 0.5px;
+  text-align: center;
+  height: 37px;
+  background: white;
+
+  width: 70%;
+  border-radius: 3px;
+  top: 0;
+  z-index: -1;
+  cursor: pointer;
+}
+form {
+  background-color: #77e87b;
+}
+.customfileuploadinp {
+  opacity: 0;
+  width: 70%;
+  height: 37px;
+  cursor: pointer;
+}

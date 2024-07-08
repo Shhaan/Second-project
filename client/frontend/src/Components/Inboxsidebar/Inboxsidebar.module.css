@@ -1,0 +1,32 @@
+.aside {
+  width: 38%;
+  background-color: #77e87b;
+  height: 100vh;
+  overflow: auto;
+}
+
+@media (min-width: 900px) {
+  .aside {
+    width: 20%;
+  }
+}
+
+.profileflexdiv {
+  display: flex;
+  gap: 8px;
+  margin-top: 39px;
+  margin-left: 10px;
+  align-items: center;
+  background: aliceblue;
+  width: 60%;
+  height: 43px;
+  border-radius: 16px;
+  padding-left: 7px;
+  cursor: pointer;
+}
+
+.imgUserProfile {
+  width: 29px;
+  height: 28px;
+  border-radius: 49px;
+}

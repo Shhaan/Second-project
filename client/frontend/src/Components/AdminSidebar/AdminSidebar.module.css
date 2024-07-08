@@ -1,0 +1,48 @@
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #7ca0d7;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  z-index: 20;
+  left: 0;
+  transition: transform 0.3s ease;
+  font-family: "Oswald";
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.visible {
+  transform: translateX(0);
+}
+
+.hidden {
+  transform: translateX(-100%);
+}
+/* Sidebar links */
+.sidebar a {
+  display: flex;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  font-size: large;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.logout {
+  color: red;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

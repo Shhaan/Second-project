@@ -1,0 +1,54 @@
+.innerdiv{
+    background-color: #77E87B;
+    opacity: 86%;
+     
+    width: 37%;
+    margin-left: 140px;
+}
+
+.image{
+    border-radius: 3px;
+    border: white solid 1px;
+     
+    width: 33%;
+    left: 33rem;
+    position: absolute;
+    top:20rem;
+}
+
+.img{
+    z-index: 12;
+    position: absolute;
+    width: 25px;
+     
+    top: 10px;
+   
+}
+
+@media (max-width:788px){
+    .image{
+        display: none;
+
+    }
+    .innerdiv{margin: auto;
+        left: 0;
+        width: 66%;}
+}
+
+@media(min-width:1010px){
+    .image{
+        left: 37rem;
+
+    }
+}
+ 
+.width40{
+    width:40% ;
+}
+
+.error{
+    color: red;
+    
+    font-size: 10px;
+    
+}

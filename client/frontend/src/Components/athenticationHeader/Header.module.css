@@ -1,0 +1,22 @@
+.Header{
+     
+    text-align: center;
+}
+
+.logo{
+    width:10%
+
+ }
+ @media (max-width: 540px) {
+
+    .logo{
+        width: 20%;
+    }
+
+
+ }
+ .heading{
+    color: white;
+    font-family: 'Oswald';
+    font-size: 60px;
+ }

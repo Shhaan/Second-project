@@ -1,0 +1,17 @@
+.divs {
+  margin: auto;
+  width: 50%;
+  background-color: white;
+  margin-bottom: 25px;
+  font-size: x-large;
+  padding: 11px;
+  display: flex;
+}
+.sdivs {
+  margin: auto;
+  width: 40%;
+  background-color: white;
+  margin-bottom: 25px;
+  font-size: x-large;
+  padding: 11px;
+}

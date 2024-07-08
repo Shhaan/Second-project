@@ -1,0 +1,8 @@
+ 
+.maindiv{
+    position: relative;
+    top:72px;
+    background: #edecec;
+    height:100vh;
+    font-family: 'Oswald';
+}

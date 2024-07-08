@@ -1,0 +1,54 @@
+aside {
+  background-color: #77e87b;
+}
+.mainflexdiv {
+  display: flex;
+  flex-direction: column;
+}
+#inpsearch {
+  height: 38px;
+  border: rgb(255, 255, 255) solid 1px;
+  border-radius: 6px;
+}
+
+.mainheading {
+  text-align: center;
+  color: white;
+}
+.griddivcategory {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.parentcategorysubflexdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h6 {
+  margin: 0;
+}
+.flexsubcategory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  margin-top: 17px;
+}
+.flexsubcategoryinner {
+  border-radius: 2px;
+  display: flex;
+  gap: 16px;
+  background: white;
+  padding: 6px;
+  padding-right: 32%;
+}
+.cropsList {
+  flex: 1;
+}
+.cropsgriddiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 192px;
+  margin-top: -10px;
+}

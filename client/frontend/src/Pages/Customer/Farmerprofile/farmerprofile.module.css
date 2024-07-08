@@ -1,0 +1,120 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #90ee90;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.leftColumn,
+.rightColumn {
+  width: 100%;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+}
+
+.profileImage {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.messageButton,
+.followButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.messageButton {
+  background-color: #007bff;
+  color: white;
+}
+
+.followButton {
+  background-color: #6f42c1;
+  color: white;
+}
+
+.bioSection {
+  margin: 20px 0;
+  text-align: start;
+}
+
+.locationMap {
+  margin: 20px 0;
+}
+
+.locationMap img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.fieldPhotos {
+  margin-bottom: 20px;
+}
+
+.fieldPhotos .photos {
+  display: flex;
+  gap: 10px;
+}
+
+.fieldPhotos img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.sellingCrops {
+  margin-bottom: 20px;
+}
+
+.sellingCrops .cropItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sellingCrops img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.reviewsSection {
+  margin-top: 20px;
+}
+
+.reviewsSection .review {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.reviewsSection .rating {
+  display: flex;
+  gap: 5px;
+}
+
+.reviewsSection .addReview {
+  display: flex;
+  flex-direction: column;
+}
