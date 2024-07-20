@@ -1,30 +1,41 @@
-.sidebarList{
-    font-size: 21px;
-    list-style-type: none;
-    margin: 34px;
-    color: white;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 11px;
- }
+.sidebarList {
+  font-size: 21px;
+  list-style-type: none;
+  margin: 34px;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 11px;
+}
 
- .sidebarList:hover{
-   cursor: pointer;
- }
+.sidebarList:hover {
+  cursor: pointer;
+}
 
- .h6{
-    margin: 0;
-    font-size: inherit;
- }
- #logout{
-    
-
-    justify-content: center;
-    color: red;
-
-
- }
-#logout:hover{
-    cursor: pointer;
+.h6 {
+  margin: 0;
+  font-size: inherit;
+}
+#logout {
+  justify-content: center;
+  color: red;
+}
+#logout:hover {
+  cursor: pointer;
+}
+.mobileview {
+  display: none;
+}
+@media (max-width: 800px) {
+  .sidebarlargeview {
+    display: none;
+  }
+  .mobileview {
+    display: block;
+  }
+}
+.listul {
+  list-style-type: none;
+  margin: 0;
 }

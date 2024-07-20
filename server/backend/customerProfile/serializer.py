@@ -76,6 +76,7 @@ class FollowerSerializer(serializers.ModelSerializer):
 
 class Orderserializer(serializers.ModelSerializer):
     user = ProfileSerializer()
+    farmer = FarmerSerializer()
     class Meta:
         model = Order
         fields='__all__'

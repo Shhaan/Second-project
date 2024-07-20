@@ -37,10 +37,9 @@ const AdminHeader = ({ toggleSidebar, side }) => {
         <div>
           <h2 className={adminheadcss.mainHead}>FarmAid</h2>
         </div>
-        <div>
+        <div onClick={() => navigator("/")}>
           <h2
             style={{ cursor: "pointer" }}
-            onClick={() => navigator("/")}
             className={adminheadcss.homeElement}
           >
             Home

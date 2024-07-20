@@ -35,6 +35,9 @@ import FarmerProfile from "./Pages/Farmer/Profile/Profile";
 import RegTransaction from "./Pages/Farmer/RegTransaction/RegTransaction";
 
 // admin
+import Orders from "./Pages/Admin/Orders/Orders";
+import OrderDetails from "./Pages/Admin/Orders/Orderdetail";
+
 import Adminlogin from "./Pages/Admin/Login/Login";
 import AdminDashboard from "./Pages/Admin/Dashboard/Dashboard";
 
@@ -106,6 +109,9 @@ function App() {
         </Route>
 
         {/* admin */}
+        <Route path="/admin/orders" element={<Orders />} />
+        <Route path="/admin/orders/:id" element={<OrderDetails />} />
+
         <Route path="/admin/dashboard" element={<AdminDashboard />}>
           {" "}
         </Route>

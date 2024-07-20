@@ -54,11 +54,9 @@ const Orders = () => {
 
   return (
     <div>
-      <UserHeader />
+      <UserprofileSidebar />
 
       <div className={style.content}>
-        <UserprofileSidebar />
-
         <hr id={style.sepratehr} />
 
         <div>

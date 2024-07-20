@@ -179,9 +179,9 @@ export default function Checkout() {
               cropName: item?.crop?.cropName,
               productid: item?.crop?.id,
               categoryid: item?.id,
-
+              farmer: item?.crop?.farmer?.id,
               quantity: item?.quantity,
-              price: item?.crop?.price.toFixed(2),
+              price: item?.crop?.price,
               items: [
                 {
                   name: item?.crop?.cropName,
@@ -197,11 +197,25 @@ export default function Checkout() {
           />
         );
       case 2:
-        return <Review />;
+        return (
+          <Review
+            totalPrice={{
+              total: item?.crop?.price * item?.quantity,
+              quantity: item?.quantity,
+              price: item?.crop?.price,
+              farmername:
+                item?.crop?.farmer?.user?.First_name +
+                " " +
+                item?.crop?.farmer?.user?.Last_name,
+              Crop: item?.crop?.cropName,
+            }}
+          />
+        );
       default:
         throw new Error("Unknown step");
     }
   }
+  console.log(item);
   return (
     <ThemeProvider theme={showCustomTheme ? checkoutTheme : defaultTheme}>
       <CssBaseline />
@@ -401,9 +415,8 @@ export default function Checkout() {
                 <Typography variant="h1">📦</Typography>
                 <Typography variant="h5">Thank you for your order!</Typography>
                 <Typography variant="body1" color="text.secondary">
-                  Your order number is
-                  <strong>&nbsp;#140396</strong>. We have emailed your order
-                  confirmation and will update you once its shipped.
+                  We have emailed your order confirmation and will update you
+                  once its shipped.
                 </Typography>
                 <Button
                   variant="contained"

@@ -222,15 +222,18 @@ class Completepayment(APIView):
             
             address = ShippingAddress.objects.get(id = int(shipping['id']))
             
-            order = Order.objects.create(user=request.user,shipping_address = address,first_name = request.user.First_name,
+            order = Order.objects.create(farmer=Farmers.objects.get(id=int(request.data['farmer'])),user=request.user,shipping_address = address,first_name = request.user.First_name,
                                  paid=True,paid_amount = items['unit_amount']['value'],payment_method='paypal')
         else:
             address = ShippingAddress.objects.create(**shipping,user=request.user)
-            order = Order.objects.create(user=request.user,shipping_address = address,first_name = request.user.First_name,
+            order = Order.objects.create(farmer=Farmers.objects.get(id=int(request.data['farmer'])),user=request.user,shipping_address = address,first_name = request.user.First_name,
                                  paid=True,paid_amount = items['unit_amount']['value'],payment_method='paypal')
         
         crop =Crops.objects.get(id=request.data['productid'])
+        Cart.objects.filter(crop=crop,user=request.user).delete()
         Orderitem.objects.create(order = order,crop=crop,quantity = items['quantity'],sub_total=items['unit_amount']['value'],total =str(float(items['unit_amount']['value'])*int(items['quantity'])))
+        crop.quantity = crop.quantity -  items['quantity']
+        crop.save()      
         return Response({'data':'created'},status=status.HTTP_201_CREATED)
     
 class FetchOrder(APIView):
@@ -238,7 +241,31 @@ class FetchOrder(APIView):
 
     def get(self,request):
         order = Orderitem.objects.filter(order__user = request.user)
-        print(order)
+         
         serialzer = OrderItemserializer(order,many=True)
         return Response(serialzer.data,status=status.HTTP_200_OK)
- 
+
+class CompletePayment(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self,request): 
+        shipping = request.data['shipping']
+        products = request.data['products']
+        if 'id' in shipping.keys():
+            
+            address = ShippingAddress.objects.get(id = int(shipping['id']))
+            
+            order = Order.objects.create(farmer=Farmers.objects.get(id=int(products['farmer'])),user=request.user,shipping_address = address,first_name = request.user.First_name,
+                                 paid=True,paid_amount = products['price'],payment_method=request.data['paymentmethod'])
+        else:
+            address = ShippingAddress.objects.create(**shipping,user=request.user)
+            order = Order.objects.create(farmer=Farmers.objects.get(id=int(products['farmer'])),user=request.user,shipping_address = address,first_name = request.user.First_name,
+                                 paid=True,paid_amount = products['price'],payment_method=request.data['paymentmethod'])
+             
+        crop =Crops.objects.get(id=products['productid'])
+
+        Orderitem.objects.create(order = order,crop=crop,quantity = products['quantity'],sub_total=products['price'],total =str(int(products['quantity'])*float(products['price'])))
+        Cart.objects.filter(crop=crop,user=request.user).delete()
+        crop.quantity = crop.quantity -  products['quantity']
+        crop.save()
+        return Response({'data':'created'},status=status.HTTP_201_CREATED )

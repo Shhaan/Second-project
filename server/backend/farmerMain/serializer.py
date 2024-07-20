@@ -24,5 +24,12 @@ class Cropseri(serializers.ModelSerializer):
         parent = Category.objects.filter(id=obj.category.parent_id).first()
 
         return CategorySerializer(parent ).data
- 
+
+class OrderserializerFarmer(serializers.ModelSerializer):
+    farmer = FarmerSerializer()
+    user  = ProfileSerializer()
+    class Meta:
+        model = Order
+        fields = '__all__'
+
  

@@ -51,7 +51,7 @@ urlpatterns = [
         path('fetchorder/', FetchOrder.as_view(), name='fetchorder'), 
 
 
-            
+            path('complete/payment/',CompletePayment.as_view(), name='CompletePayment')
             
  
       

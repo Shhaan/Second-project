@@ -23,20 +23,16 @@ const Sale = () => {
       try {
         const accessToken = localStorage.getItem("access_token");
 
-        if (accessToken) {
-          const getuser = await axios.get(`currentuser/`, {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            },
-          });
+        const getuser = await axios.get(`currentuser/`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
 
-          if (!getuser.data.is_staff) {
-            navigate("/");
-          }
-          dispatch(UserRegistered(getuser.data));
-        } else {
+        if (!getuser.data.is_staff) {
           navigate("/");
         }
+        dispatch(UserRegistered(getuser.data));
       } catch (e) {
         console.log(e);
         navigate("/");

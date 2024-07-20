@@ -3,12 +3,12 @@ import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminSidebar from "../../../Components/AdminSidebar/AdminSidebar";
 import categorycss from "../Category/Category.module.css";
 import axios from "../../../Config/Axios";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 const Users = () => {
   const [side, settoggleside] = useState(true);
   const [users, setfarmer] = useState([]);
   const [search, setsearch] = useState("");
-
+  const navigate = useNavigate();
   useEffect(() => {
     const fectchusers = async () => {
       try {
@@ -22,6 +22,9 @@ const Users = () => {
         setfarmer(users.data);
       } catch (e) {
         console.log(e);
+        if (e.response.status == 401 || e.response.status == 403) {
+          navigate("/admin/login");
+        }
       }
     };
     fectchusers();

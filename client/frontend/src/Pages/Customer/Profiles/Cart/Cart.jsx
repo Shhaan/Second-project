@@ -107,11 +107,9 @@ const Cart = () => {
   };
   return (
     <div>
-      <UserHeader />
+      <UserprofileSidebar />
 
       <div className={style.content}>
-        <UserprofileSidebar />
-
         <hr id={style.sepratehr} />
 
         <div className={cartcss.innerdiv}>
@@ -147,7 +145,9 @@ const Cart = () => {
                       ))}
                   </select>
                   <button
-                    onClick={() => navigate(`/crop/buy/${obj.crop.slug}`,{state:obj.id})}
+                    onClick={() =>
+                      navigate(`/crop/buy/${obj.crop.slug}`, { state: obj.id })
+                    }
                     className={cartcss.buybutton}
                   >
                     Buy

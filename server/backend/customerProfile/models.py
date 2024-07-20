@@ -49,6 +49,7 @@ class Order(models.Model):
         ("pending", "Pending"),
         ("completed", "Completed"),
     )
+    farmer = models.ForeignKey(Farmers, on_delete=models.CASCADE,related_name='farmerorder')
     user = models.ForeignKey(Customers, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=150)
     created_at = models.DateField(auto_now_add=True)
@@ -61,8 +62,8 @@ class Order(models.Model):
         ShippingAddress, on_delete=models.SET_NULL, null=True, blank=True
     )
     PAYMENT_METHOD_CHOICES = (
-        ("cash_on_delivery", "Cash on Delivery"),
-        ("pay_by_wallet", "Wallet  payment"),
+        ("Cash on delivery", "Cash on Delivery"),
+        ("wallet", "Wallet  payment"),
         ("paypal", "PayPal"),
     )
 

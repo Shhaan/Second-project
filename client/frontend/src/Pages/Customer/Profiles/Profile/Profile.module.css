@@ -13,6 +13,7 @@
   margin: 0;
   color: transparent;
   height: 695px;
+  display: none;
 }
 
 label {
@@ -30,4 +31,33 @@ label {
   margin: 0;
   color: transparent;
   height: 500px;
+}
+.walletdiv {
+  background: white;
+  height: 182px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.walleth1 {
+  position: absolute;
+  left: 30%;
+}
+.userheaderresponsive {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  #sepratehr {
+    display: none;
+  }
+  .userheaderchange {
+    display: none;
+  }
+  .userheaderresponsive {
+    display: block;
+  }
 }

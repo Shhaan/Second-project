@@ -12,6 +12,11 @@ urlpatterns = [
          path("farmers/", Fetchfarmer.as_view(),name='farmer' ), 
          path('customer/',Fetchcustomer.as_view(),name='customer')
 
+         ,
+         path('orders/',FarmerOrders.as_view(),name='farmercrop'),
+         path('orders-details/<int:id>/',FarmerOrdersdetails.as_view(),name='farmercrop'),
+
+
          
          
 ]

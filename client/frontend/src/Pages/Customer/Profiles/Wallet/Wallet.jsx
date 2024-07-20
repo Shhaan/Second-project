@@ -7,6 +7,8 @@ import register from "../../Register/Register.module.css";
 import { setToken } from "../../../../Slices/Access";
 
 import UserprofileSidebar from "../../../../Components/UserprofileSidebar/UserprofileSidebar";
+import Userprofilesidebarmobile from "../../../../Components/UserprofileSidebar/Userprofilesidebarmobile";
+
 import axios from "../../../../Config/Axios";
 import { useDispatch, useSelector } from "react-redux";
 import { UserRegistered } from "../../../../Slices/UserSlice";
@@ -58,17 +60,17 @@ const Wallet = () => {
 
   return (
     <div>
-      <UserHeader />
+      <UserprofileSidebar />
 
       <div className={style.content}>
-        <UserprofileSidebar />
-
         <hr id={style.sepratehr} />
 
         <div className={register.innerdiv}>
           <div>
             {wallet.map((o) => (
-              <h1>{o.amount}</h1>
+              <div className={style.walletdiv}>
+                <h4 className={style.walleth1}>Balance amount:{o.amount} </h4>
+              </div>
             ))}
           </div>
         </div>

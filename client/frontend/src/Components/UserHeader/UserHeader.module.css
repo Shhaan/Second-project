@@ -248,6 +248,20 @@
 .mobileSize {
   display: none;
 }
+.toggleside {
+  display: block;
+  position: relative;
+  top: -30px;
+  left: -25px;
+}
+.mobileSizeside {
+  display: block !important;
+  background: #1b7e5e;
+  position: absolute;
+  width: 100%;
+  z-index: 66;
+  color: white;
+}
 
 .list {
   list-style-type: none;

@@ -1,14 +1,18 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Category
-from .serializer import CategorySerilizer
+from .serializer import *
 from rest_framework.views import APIView
 from rest_framework import permissions,status
+from rest_framework.generics import ListAPIView,RetrieveAPIView
+
 from rest_framework.response import Response 
 from django.db.models import Q
 from customerProfile.serializer import *
 from farmerAuth.models import Farmers
 from customerAuth.models import Customers
+from farmerMain.permision import IsStaffUser
+
 # Create your views here.
 
 class CategoryCrud(viewsets.ModelViewSet):
@@ -49,3 +53,13 @@ class Fetchcustomer(APIView):
         serializers = ProfileSerializer(customer,many=True)
         return Response(serializers.data,status=status.HTTP_200_OK)
     
+class FarmerOrders(ListAPIView):
+    permission_classes = [IsStaffUser]
+    serializer_class = OrderItemserializer 
+    queryset = Orderitem.objects.all().order_by('-id')
+
+class FarmerOrdersdetails(RetrieveAPIView):
+    permission_classes = [IsStaffUser]
+    serializer_class = OrderItemserializer 
+    queryset = Orderitem.objects.all().order_by('-id')
+    lookup_field = 'id'

@@ -5,7 +5,7 @@ import { Farmercontext } from "../../Functions/FarmerInboxcontext";
 import axios from "../../Config/Axios";
 const Paypalbutton = ({ products }) => {
   const { activeStep, setActiveStep } = React.useContext(Farmercontext);
-  console.log(products);
+
   return (
     <div>
       <PayPalButtons
@@ -18,11 +18,11 @@ const Paypalbutton = ({ products }) => {
               {
                 amount: {
                   currency_code: "USD",
-                  value: products.price,
+                  value: (products.price * products.quantity).toFixed(2),
                   breakdown: {
                     item_total: {
                       currency_code: "USD",
-                      value: products.price,
+                      value: (products.price * products.quantity).toFixed(2),
                     },
                   },
                 },
@@ -51,6 +51,7 @@ const Paypalbutton = ({ products }) => {
                     shipping: JSON.parse(localStorage.getItem("shipaddress")),
                     productid: products.productid,
                     categoryid: products.categoryid,
+                    farmer: products.farmer,
                   },
                   {
                     headers: {

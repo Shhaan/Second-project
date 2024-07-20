@@ -8,6 +8,8 @@ import axios from "../../../Config/Axios";
 import style from "./Crop.module.css";
 import { Api_base } from "../../../Config/Constants";
 import styles from "../Home/User.module.css";
+import toast from "react-hot-toast";
+
 const Market = () => {
   const dispatch = useDispatch();
   const { access, refresh } = useSelector((state) => state.Token);
@@ -96,6 +98,7 @@ const Market = () => {
         }
       );
       if (data.status == 201) {
+        toast.success(` ${quantity} quantity added`, 5000);
       }
     } catch (e) {
       if ((e.response.status = 401)) {

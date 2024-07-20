@@ -37,11 +37,9 @@ const Profile = () => {
 
   return (
     <div>
-      <UserHeader />
+      <UserprofileSidebar />
 
       <div className={style.content}>
-        <UserprofileSidebar />
-
         <hr id={style.sepratehr} />
 
         <div className={register.innerdiv}>

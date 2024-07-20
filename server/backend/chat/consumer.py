@@ -17,8 +17,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
         self.room_group_name = f"chat_{user_ids[0] }-{user_ids[1]}"
         await self.channel_layer.group_add(
             self.room_group_name,
-            self.channel_name
-        ) 
+            self.channel_name ) 
+       
         await self.accept()
     
     async def receive(self, text_data=None, bytes_data=None): 

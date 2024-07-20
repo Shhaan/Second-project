@@ -5,6 +5,8 @@ const Farmercontext = createContext();
 const FarmerInboxcontext = ({ children }) => {
   const [filladrress, setfilladrress] = useState(false);
   const [activeStep, setActiveStep] = React.useState(0);
+  const [paymentmethod, setpaymentmethod] = React.useState('');
+
 
   return (
     <Farmercontext.Provider
@@ -14,6 +16,8 @@ const FarmerInboxcontext = ({ children }) => {
 
         activeStep,
         setActiveStep,
+        setpaymentmethod,
+        paymentmethod
       }}
     >
       {children}

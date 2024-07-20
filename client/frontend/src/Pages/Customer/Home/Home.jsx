@@ -231,7 +231,7 @@ const Home = () => {
       )}
 
       <div style={{ backgroundColor: "#F3EEEE" }}>
-        <div className={`text-center mt-5 ${styles.category1}`}>Category</div>
+        <div className={`text-center  ${styles.category1}`}>Category</div>
 
         <div className={styles.categorymaindiv}>
           {category.map((o) => (

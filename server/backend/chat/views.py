@@ -4,16 +4,33 @@ from .serializer import chatSerializer,Chatdepthserializer
 from .models import Chatmessage
 from customerAuth.models import Customers
 from rest_framework.generics import ListAPIView,CreateAPIView,RetrieveUpdateAPIView
-from django.db.models import Subquery,OuterRef,Q
+ 
+
 from customerProfile.serializer import ProfileSerializer
+from django.db.models import Q, F, Value, CharField
+from django.db.models.functions import Concat, Cast
+
 class MyInbox(ListAPIView):
     serializer_class = Chatdepthserializer
+    
     def get_queryset(self):
-          
-        c =  self.request.user
-        messages = Chatmessage.objects.filter(Q(sender=c)|Q(reciever=c)).order_by('-id')
- 
+        c = self.request.user
+        messages = Chatmessage.objects.filter(Q(sender=c) | Q(reciever=c))
+        
+        # Cast IDs to CharField and concatenate them with a dash
+        messages = messages.annotate(
+            user_identifier=Concat(
+                Cast(F('sender_id'), output_field=CharField()),
+                Value('-'),
+                Cast(F('reciever_id'), output_field=CharField())
+            )
+        )
+        
+        # Use DISTINCT ON with the appropriate ORDER BY
+        messages = messages.order_by('user_identifier', '-id').distinct('user_identifier')
+        
         return messages
+
 class GetMessages(ListAPIView):
     serializer_class = chatSerializer
     def get_queryset(self):

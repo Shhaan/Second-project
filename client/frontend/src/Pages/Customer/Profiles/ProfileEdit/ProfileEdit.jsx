@@ -122,11 +122,9 @@ const Profile = () => {
 
   return (
     <div>
-      <UserHeader />
+      <UserprofileSidebar />
 
       <div className={style.content}>
-        <UserprofileSidebar />
-
         <hr id={style.sepratehr} />
 
         <div className={register.innerdiv}>
@@ -159,7 +157,6 @@ const Profile = () => {
 
                 <input
                   name="Email"
-                  onChange={(e) => handlechange(e)}
                   className={`w-100  ${logincss.inp}`}
                   value={val.Email}
                 />

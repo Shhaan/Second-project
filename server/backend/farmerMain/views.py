@@ -37,14 +37,15 @@ class Farmercropimgall(RetrieveAPIView):
 class Farmercropadd(APIView):
     permission_classes = [IsStaffUser]
     parser_classes = [MultiPartParser,FormParser]
-    def post(self,request):
-        farmer = Farmers.objects.filter(user__Email = request.user.Email).first()
+    def post(self,request): 
+        farmer = Farmers.objects.filter(user = request.user).first()
         category = Category.objects.get(id=request.data['category'])
         images = request.FILES.getlist('image')
         data = {'farmer':farmer,'category':category,'cropName':request.data['cropName'],'price':request.data['price'],'quantity':request.data['quantity'],'About':request.data['About']}
-        
+ 
         crop = Crops.objects.create(**data)
         for img in images:
             Cropimage.objects.create(crop=crop,image=img)
         serilizer = CropSerializer(crop)
         return Response(serilizer.data,status=status.HTTP_201_CREATED)
+
