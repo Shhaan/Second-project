@@ -1,2 +1,2 @@
-./Client/frontend/node_modules
-./Server/fenv
+**/node_modules/
+**/fenv/
