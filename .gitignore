@@ -1,2 +1,10 @@
 **/node_modules/
 **/fenv/
+# Ignore media files
+/media/
+
+# Ignore node modules
+/node_modules/
+
+# Ignore virtual environment
+/server/fvenv/
