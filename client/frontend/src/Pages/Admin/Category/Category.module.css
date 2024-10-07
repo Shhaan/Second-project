@@ -79,3 +79,8 @@
   opacity: 94%;
   background-color: white;
 }
+.orderdetailcontent {
+  background-color: #eeecec;
+  border-radius: 10px;
+  height: 100px;
+}

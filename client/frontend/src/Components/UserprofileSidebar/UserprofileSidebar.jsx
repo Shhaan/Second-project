@@ -134,7 +134,7 @@ const Header = () => {
               onClick={() => navigate("/shipping-address")}
               className={styles.list}
             >
-              Shipping Adress
+              Shipping Address
             </li>
             <li onClick={() => navigate("/cart")} className={styles.list}>
               Cart

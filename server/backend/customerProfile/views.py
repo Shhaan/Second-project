@@ -11,13 +11,13 @@ from django.db.models import *
 from farmerMain.serializer import Cropseri
 from farmerMain.models import *
 import json
- 
+from django.shortcuts import get_object_or_404
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
- 
+from rest_framework.exceptions import NotFound
 from paypalrestsdk import notifications
 # Create your views here.
 
@@ -190,6 +190,7 @@ class Followerviewdelete(RetrieveUpdateDestroyAPIView):
     serializer_class = FollowerSerializer
     queryset = follower.objects.all()
     lookup_field = 'id'
+    
 
 
 class CropCategory(APIView):
@@ -269,3 +270,43 @@ class CompletePayment(APIView):
         crop.quantity = crop.quantity -  products['quantity']
         crop.save()
         return Response({'data':'created'},status=status.HTTP_201_CREATED )
+
+
+class FarmerReviewview(ListAPIView):
+    serializer_class = FarmerReviewserializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        try:
+            farmer = Farmers.objects.get(user__Email = self.kwargs['farmermail'])
+
+        except Farmers.DoesNotExist:
+            raise NotFound({"error":'No farmer with this mail'})
+        return FarmerReview.objects.filter(farmer=farmer)
+
+class Isfollowing(APIView):
+    permission_classes  = [permissions.IsAuthenticated]
+
+    def get(self,request,farmermail):
+         
+        try:
+            f = follower.objects.get(user=request.user,farmer=Farmers.objects.get(user__Email=farmermail))
+        except follower.DoesNotExist:
+            return Response({'isFollowing':False},status=status.HTTP_204_NO_CONTENT)
+        return Response({'isFollowing':True},status=status.HTTP_200_OK)
+        
+    def delete(self,request,farmermail):
+
+        try:
+            f = follower.objects.get(user=request.user,farmer=Farmers.objects.get(user__Email=farmermail))
+            f.delete()
+            return Response({'isFollowing': False}, status=status.HTTP_200_OK)
+        except follower.DoesNotExist:
+            follower.objects.create(user=request.user,farmer=Farmers.objects.get(user__Email=farmermail))
+            return Response({'isFollowing':True},status=status.HTTP_200_OK)
+        
+class Farmercrop(ListAPIView):
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = CropSerializernew
+    def get_queryset(self):
+        return Crops.objects.filter(farmer=Farmers.objects.get(user__Email= self.kwargs['farmermail']))

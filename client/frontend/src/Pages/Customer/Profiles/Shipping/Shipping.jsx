@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 const Shipping = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [shippingaddress, setshippingaddress] = useState([]);
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -38,12 +39,13 @@ const Shipping = () => {
       try {
         const accessToken = localStorage.getItem("access_token");
 
-        const shipping = await axios.get(`customer/profile/getshipping/`, {
+        const { data } = await axios.get(`customer/profile/getshipping/`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
         });
-        console.log(shipping);
+        setshippingaddress(data);
+        console.log(data);
       } catch (e) {
         console.log(e);
       }
@@ -177,8 +179,14 @@ const Shipping = () => {
             </div>
           </div>
         </div>
-
-        <div></div>
+        <hr className={style.hrdivorder} />
+        <div>
+          {shippingaddress.map((obj) => (
+            <div className={style.shippingdisplay}>
+              {obj.First_name} {obj.Last_name}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

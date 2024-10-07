@@ -12,6 +12,7 @@ const Farmer = () => {
   const dispatch = useDispatch();
   const [farmers, setfarmers] = useState([]);
   const [follower, setfollower] = useState([]);
+  const { user } = useSelector((state) => state.user);
   const navigator = useNavigate();
   useEffect(() => {
     const fetchUser = async () => {
@@ -68,24 +69,27 @@ const Farmer = () => {
       <section style={{ display: "flex" }}>
         <div style={{ width: "100%" }}>
           <div className={styles.marketgrid}>
-            {farmers.slice(0, 4).map((o) => (
-              <div
-                onClick={() => navigator(`/farmer-profile/${o.user.Email}`)}
-                style={{
-                  backgroundImage: `url(${Api_base + o.farmer_photo})`,
-                  backgroundSize: "cover",
-                  height: "199px",
-                  width: "302px",
-                  padding: "10px",
-                  color: "white",
-                  cursor: "pointer",
-                }}
-              >
-                <h4>{o?.user?.First_name}</h4>
-                <h5>Items: {o?.cultivatingCrop?.Cropname}</h5>
-                <p>{o?.Bio}</p>
-              </div>
-            ))}
+            {farmers
+              .slice(0, 4)
+              .filter((i) => i.user.id != user.id)
+              .map((o) => (
+                <div
+                  onClick={() => navigator(`/farmer-profile/${o.user.Email}`)}
+                  style={{
+                    backgroundImage: `url(${Api_base + o.farmer_photo})`,
+                    backgroundSize: "cover",
+                    height: "199px",
+                    width: "302px",
+                    padding: "10px",
+                    color: "white",
+                    cursor: "pointer",
+                  }}
+                >
+                  <h4>{o?.user?.First_name}</h4>
+                  <h5>Items: {o?.cultivatingCrop?.Cropname}</h5>
+                  <p>{o?.Bio}</p>
+                </div>
+              ))}
           </div>
         </div>
       </section>

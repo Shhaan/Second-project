@@ -61,3 +61,10 @@ label {
     display: block;
   }
 }
+.shippingdisplay {
+  padding: 10px;
+  background: white;
+  font-size: larger;
+  font-weight: 450;
+  border-radius: 6px;
+}

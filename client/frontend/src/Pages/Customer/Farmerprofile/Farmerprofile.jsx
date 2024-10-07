@@ -4,27 +4,106 @@ import axios from "../../../Config/Axios";
 import Userfooter from "../../../Components/userFooter/UserFooter";
 import { Api_base } from "../../../Config/Constants";
 import style from "./farmerprofile.module.css";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const Aboutproduct = () => {
+  const navigate = useNavigate();
   const [farmer, setfarmer] = useState({});
   const [selectedParent, setSelectedParent] = useState(null);
+  const [farmerreview, setfarmerreview] = useState([]);
+  const [following, setfollowing] = useState(false);
 
+  const [crops, setfarmercrops] = useState([]);
   const { slug } = useParams();
+
   useEffect(() => {
-    const fetchCategory = async () => {
+    const fetchfarmer = async () => {
       try {
         const { data } = await axios.get(
           `customer/profile/farmer-profile/${slug}/`
         );
 
         setfarmer(data);
+        console.log(data);
       } catch (e) {
         console.log(e);
       }
     };
-    fetchCategory();
+    fetchfarmer();
+
+    const fetchFarmerReview = async () => {
+      try {
+        const accessToken = localStorage.getItem("access_token");
+        const { data } = await axios.get(
+          `customer/profile/farmers-review/${slug}/`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
+
+        setfarmerreview(data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchFarmerReview();
+
+    const Isfollowingfarmer = async () => {
+      try {
+        const accessToken = localStorage.getItem("access_token");
+        const { data } = await axios.get(
+          `customer/profile/isfollowing/${slug}/`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
+
+        setfollowing(data.isFollowing);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    Isfollowingfarmer();
+
+    const Farmerscrop = async () => {
+      try {
+        const accessToken = localStorage.getItem("access_token");
+        const { data } = await axios.get(`customer/profile/crops/${slug}/`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+
+        setfarmercrops(data);
+        console.log(data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    Farmerscrop();
   }, [slug]);
+
+  const followfarmer = async () => {
+    try {
+      const accessToken = localStorage.getItem("access_token");
+      const { data } = await axios.delete(
+        `customer/profile/isfollowing/${slug}/`,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+
+      setfollowing(data.isFollowing);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <div>
@@ -49,8 +128,26 @@ const Aboutproduct = () => {
                 <h1>{farmer?.user?.First_name + farmer?.user?.Last_name}</h1>
               </div>
               <div className={style.actionButtons}>
-                <button className={style.messageButton}>Message</button>
-                <button className={style.followButton}>Follow</button>
+                <button
+                  onClick={() =>
+                    navigate("/inbox", { state: farmer?.user?.id })
+                  }
+                  className={style.messageButton}
+                >
+                  Message
+                </button>
+                {following ? (
+                  <button
+                    onClick={followfarmer}
+                    className={style.followingButton}
+                  >
+                    Following
+                  </button>
+                ) : (
+                  <button onClick={followfarmer} className={style.followButton}>
+                    Follow
+                  </button>
+                )}
               </div>
               <div className={style.bioSection}>
                 <p>
@@ -69,25 +166,20 @@ const Aboutproduct = () => {
 
             <div className={style.reviewsSection}>
               <h4>Reviews</h4>
-              <div className={style.review}>
-                <p>
-                  <strong>Shan:</strong> This is a nice farmer and his crops are
-                  genuine
-                </p>
-                <div className={style.rating}>
-                  <span>⭐</span>
-                  <span>⭐</span>
-                  <span>⭐</span>
+
+              {farmerreview.map((obj) => (
+                <div className={style.review}>
+                  <p>
+                    <strong>{obj.user.First_name}</strong> {obj.review}
+                  </p>
+
+                  <div className={style.rating}>
+                    {Array.from({ length: obj.rating }, (_, index) => (
+                      <span key={index}>⭐</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className={style.addReview}>
-                <p>Add review</p>
-                <div className={style.rating}>
-                  <span>⭐</span>
-                  <span>⭐</span>
-                  <span>⭐</span>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           <div>
@@ -95,30 +187,31 @@ const Aboutproduct = () => {
               <div className={style.fieldPhotos}>
                 <h4>Field photos</h4>
                 <div className={style.photos}>
-                  <img src="field_photo_1_url" alt="Field 1" />
-                  <img src="field_photo_2_url" alt="Field 2" />
+                  {farmer?.feildPhoto &&
+                    Array.isArray(farmer.feildPhoto) &&
+                    farmer.feildPhoto.map((o, index) => (
+                      <img
+                        key={index}
+                        src={o.Feild_photo}
+                        alt={`Field ${index + 1}`}
+                      />
+                    ))}
                 </div>
               </div>
               <div className={style.sellingCrops}>
                 <h4>Selling crops</h4>
-                <div className={style.cropItem}>
-                  <img src="crop_image_url" alt="Crop" />
-                  <p>Corn</p>
-                  <p>Field corn</p>
-                  <p>100/kg</p>
-                </div>
-                <div className={style.cropItem}>
-                  <img src="crop_image_url" alt="Crop" />
-                  <p>Corn</p>
-                  <p>Field corn</p>
-                  <p>100/kg</p>
-                </div>
-                <div className={style.cropItem}>
-                  <img src="crop_image_url" alt="Crop" />
-                  <p>Corn</p>
-                  <p>Field corn</p>
-                  <p>100/kg</p>
-                </div>
+                {crops.map((obj) => (
+                  <div
+                    style={{ cursor: "pointer" }}
+                    onClick={() => navigate(`/crop/${obj.slug}`)}
+                    className={`mb-5 ${style.cropItem}`}
+                  >
+                    <img src={Api_base + obj.image.image} alt="Crop" />
+                    <p>{obj.cropName}</p>
+                    <p>{obj.category.categoryName}</p>
+                    <p>{obj.quantity}/kg</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
