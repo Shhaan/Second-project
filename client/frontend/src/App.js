@@ -21,6 +21,7 @@ import UserInbox from "./Pages/Customer/Profiles/Inbox/Inbox";
 import Farmers from "./Pages/Customer/Farmers/Farmers";
 import Aboutproduct from "./Pages/Customer/Aboutproduct/Aboutproduct";
 import Farmerprofile from "./Pages/Customer/Farmerprofile/Farmerprofile";
+import UserOrderdetails from "./Pages/Customer/Profiles/Orders/Orderdetails";
 // famrmer
 import FarmerRegister from "./Pages/Farmer/Register/Register";
 import FarmerHome from "./Pages/Farmer/Home/Home";
@@ -31,7 +32,8 @@ import FarmerInbox from "./Pages/Farmer/Inbox/Inbox";
 import FarmerFollower from "./Pages/Farmer/Follower/Follower";
 import FarmerProfileEdit from "./Pages/Farmer/ProfilEdit/ProfilEdit";
 import FarmerProfile from "./Pages/Farmer/Profile/Profile";
-
+import FarmerOrders from "./Pages/Farmer/Orders/Orders";
+import Ordersdetail from "./Pages/Farmer/Orders/Ordersdetail";
 import RegTransaction from "./Pages/Farmer/RegTransaction/RegTransaction";
 
 // admin
@@ -88,6 +90,7 @@ function App() {
         <Route path="/following-farmer" element={<UserFollowing />}></Route>
         <Route path="/wallet" element={<UserWallet />}></Route>
         <Route path="/orders" element={<UserOrders />}></Route>
+        <Route path="/orders/:id" element={<UserOrderdetails />}></Route>
         <Route path="/farmer" element={<Farmers />}></Route>
         <Route path="/aboutitem" element={<Aboutproduct />}></Route>
         <Route path="/farmer-profile/:slug" element={<Farmerprofile />}></Route>
@@ -104,7 +107,8 @@ function App() {
 
           <Route path="sale/add/crop" element={<FarmerAddcrop />} />
           <Route path="sale/edit/crop/:id" element={<FarmerEditcrop />} />
-
+          <Route path="orders" element={<FarmerOrders />} />
+          <Route path="orders/:id" element={<Ordersdetail />} />
           <Route path="dashboard" element={<FarmerHome />} />
         </Route>
 

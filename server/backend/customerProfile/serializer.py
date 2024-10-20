@@ -59,6 +59,10 @@ class ShipaddresSerializer(serializers.ModelSerializer):
     class Meta:
         model = ShippingAddress
         fields = '__all__'
+    def validate(self, attrs):
+        return attrs    
+    def create(self, validated_data):
+        return ShippingAddress.objects.create(**validated_data)
 
 class WalletSerializer(serializers.ModelSerializer):
     class Meta:

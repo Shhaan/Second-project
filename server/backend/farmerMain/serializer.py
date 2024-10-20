@@ -4,7 +4,7 @@ from customerAuth.models import Customers
 from farmerAuth.models import Farmers
 from AdminMain.models import Category
 from customerProfile.serializer import *
- 
+from AdminMain.serializer import *
 
 class Cropseri(serializers.ModelSerializer):
       
@@ -26,10 +26,13 @@ class Cropseri(serializers.ModelSerializer):
         return CategorySerializer(parent ).data
 
 class OrderserializerFarmer(serializers.ModelSerializer):
+    order_items = serializers.SerializerMethodField()
     farmer = FarmerSerializer()
     user  = ProfileSerializer()
     class Meta:
         model = Order
         fields = '__all__'
-
+    def get_order_items(self, obj):
+        order_items = Orderitem.objects.filter(order=obj)
+        return OrderItemDetailSerializer(order_items, many=True).data
  

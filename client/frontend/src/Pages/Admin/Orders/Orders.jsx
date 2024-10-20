@@ -5,8 +5,8 @@ import categorycss from "../Category/Category.module.css";
 import axios from "../../../Config/Axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Api_base } from "../../../Config/Constants";
-import salecss from "../../Farmer/Sale/Sale.module.css";
+import { formatDate } from "../../../utils/dateFormatter";
+
 const Order = () => {
   const dispatch = useDispatch();
   const { access, refresh } = useSelector((state) => state.Token);
@@ -39,12 +39,12 @@ const Order = () => {
       try {
         const accessToken = localStorage.getItem("access_token");
 
-        const orders = await axios.get("admin-main/orders/", {
+        const orders = await axios.get("admin-main/admin-orders/", {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
         });
-        setOrder(orders.data);
+        setOrder(orders.data.results);
         console.log(orders.data);
       } catch (e) {
         console.log(e);
@@ -74,27 +74,49 @@ const Order = () => {
           side ? "" : categorycss.noSidebar
         }`}
       >
-        <div
-          style={{ paddingTop: "130px" }}
-          className="m-auto   col-12 col-md-10 col-lg-8  "
-        >
-          {order.map((o) => (
-            <div
-              onClick={() => navigate(`/admin/orders/${o.id}`)}
-              className={salecss.cropflexdiv}
-            >
-              <img
-                className={salecss.cropimg}
-                alt=""
-                src={Api_base + o?.crop?.image?.image}
-              />
-              <h6>{o.order.user.First_name}</h6>
-              <h6>{o.crop.cropName}</h6>
+        <div className={categorycss.orderListContainer}>
+          <h2 className={categorycss.orderListTitle}>Order List</h2>
+          <div className={categorycss.orderGrid}>
+            {order.map((o) => (
+              <div
+                key={o.id}
+                onClick={() => navigate(`/admin/orders/${o.id}`)}
+                className={categorycss.orderCard}
+              >
+                <div className={categorycss.orderHeader}>
+                  <h3>Order #{o.id}</h3>
+                  <span
+                    className={`${categorycss.orderStatus} ${
+                      categorycss[o.status]
+                    }`}
+                  >
+                    {o.status}
+                  </span>
+                </div>
+                <div className={categorycss.orderDetails}>
+                  <p>
+                    <strong>User ID:</strong> {o?.user?.Email}
+                  </p>
+                  <p>
+                    <strong>Farmer ID:</strong> {o?.farmer?.user?.Email}
+                  </p>
+                  <p>
+                    <strong>Date:</strong> {formatDate(o.created_at)}
+                  </p>
+                  <p>
+                    <strong>Amount:</strong> ${o.paid_amount}
+                  </p>
 
-              <h6>{o.order.created_at}</h6>
-              <h6>{o.quantity} kg</h6>
-            </div>
-          ))}
+                  <p>
+                    <strong>Total:</strong> {o.total}
+                  </p>
+                  <p>
+                    <strong>Items:</strong> {o.order_items.length}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </React.Fragment>

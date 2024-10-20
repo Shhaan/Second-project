@@ -1,0 +1,92 @@
+.followersList {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 20px;
+}
+
+.followerItem {
+  display: flex;
+  align-items: center;
+  padding: 12px 8px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+.followerItem:hover {
+  background-color: #f5f5f5;
+}
+
+.followerName,
+.followerInfo,
+.followerDate {
+  flex: 1;
+  padding: 0 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.followerName {
+  flex: 2;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.followerInfo {
+  color: #34495e;
+  margin: 4px 0;
+}
+
+.followerDate {
+  color: #7f8c8d;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+.paginationButton {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.paginationButton:hover {
+  background-color: #2980b9;
+}
+
+.paginationButton:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.followerAction {
+  flex: 0.5;
+  text-align: center;
+}
+
+.removeButton {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.removeButton:hover {
+  background-color: #c0392b;
+}

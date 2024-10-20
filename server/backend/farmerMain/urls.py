@@ -11,13 +11,12 @@ urlpatterns =  [
 
 
          path('',include(router.urls)),
-   
-
-         
+         path('orders/', FarmerOrders.as_view(), name='farmer_orders'),
+         path('approve-order/<int:id>/', FarmerOrders.as_view(), name='farmer_orders'),
+         path('follower/', FarmerFollower.as_view(), name='farmer_follower'),
+         path('follower/<int:id>/', FarmerFollower.as_view(), name='farmer_follower'),
 
       
     
     
 ]
-
- 

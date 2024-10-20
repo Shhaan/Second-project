@@ -61,6 +61,7 @@ class Order(models.Model):
     shipping_address = models.ForeignKey(
         ShippingAddress, on_delete=models.SET_NULL, null=True, blank=True
     )
+    farmer_accept = models.BooleanField(default=False)
     PAYMENT_METHOD_CHOICES = (
         ("Cash on delivery", "Cash on Delivery"),
         ("wallet", "Wallet  payment"),
@@ -76,7 +77,7 @@ class Order(models.Model):
 
     def __str__(self):
         return "order for " + self.user.First_name + " |   Email :  " + self.user.Email
-
+     
 
 class Orderitem(models.Model):
     order = models.ForeignKey(

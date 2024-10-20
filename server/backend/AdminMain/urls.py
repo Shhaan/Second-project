@@ -15,8 +15,7 @@ urlpatterns = [
          ,
          path('orders/',FarmerOrders.as_view(),name='farmercrop'),
          path('orders-details/<int:id>/',FarmerOrdersdetails.as_view(),name='farmercrop'),
-
-
-         
-         
+         path('admin-orders/', AdminOrderList.as_view(), name='admin-orders'),
+    path('admin-orders/<int:id>/', AdminOrderDetail.as_view(), name='admin-order-detail'),
+    path('admin-orders/<int:id>/update-status/', AdminOrderStatusUpdate.as_view(), name='admin-order-status-update'),
 ]

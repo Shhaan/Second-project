@@ -80,7 +80,191 @@
   background-color: white;
 }
 .orderdetailcontent {
-  background-color: #eeecec;
+  background-color: #f8f9fa;
   border-radius: 10px;
-  height: 100px;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .orderdetailcontent {
+    padding: 1rem;
+  }
+}
+
+.orderTitle {
+  color: #333;
+  font-weight: bold;
+}
+
+.orderCard {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.orderCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.orderHeader h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.orderStatus {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.pending {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.completed {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.cancelled {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.orderDetails p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.orderDetails strong {
+  font-weight: 600;
+  color: #333;
+}
+
+.orderInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.infoGroup h6 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.infoGroup p {
+  margin-bottom: 0.25rem;
+}
+
+.orderItems {
+  margin-bottom: 1.5rem;
+}
+
+.itemsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.itemsTable th,
+.itemsTable td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.itemsTable th {
+  font-weight: bold;
+  background-color: #f8f9fa;
+}
+
+.orderTotal {
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.orderListContainer {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.orderListTitle {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.orderGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .orderGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .orderListContainer {
+    padding: 1rem;
+  }
+}
+
+.statusDropdown {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.statusDropdown:hover,
+.statusDropdown:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.statusDropdown option {
+  font-weight: normal;
+  text-transform: capitalize;
+}
+
+.statusPending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.statusCompleted {
+  background-color: #28a745;
+  color: #fff;
 }

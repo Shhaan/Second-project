@@ -73,6 +73,9 @@ const Orders = () => {
                     alignItems: "center",
                     gap: "14px",
                   }}
+                  onClick={() => {
+                    navigate(`/orders/${o.id}`);
+                  }}
                   className="mb-4 p-2 bg-white"
                 >
                   <img

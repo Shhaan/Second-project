@@ -129,7 +129,13 @@ class Getshipping(APIView):
         else:
             return Response(serializer.data,status=status.HTTP_204_NO_CONTENT)
     def post(self,request):
-        return Response({'serializer.data'},status=status.HTTP_200_OK)
+        data = request.data
+        data['user'] = request.user.id
+        serializer = ShipaddresSerializer(data=data)    
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data,status=status.HTTP_201_CREATED)
+        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
     
 
 
@@ -241,7 +247,16 @@ class FetchOrder(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self,request):
-        order = Orderitem.objects.filter(order__user = request.user)
+        id = request.GET.get('id',False)
+        if id:
+            try:
+                order = Orderitem.objects.get(order__id = id)
+                serialzer = OrderItemserializer(order)
+                return Response(serialzer.data,status=status.HTTP_200_OK)
+            except Orderitem.DoesNotExist:
+                raise NotFound({"error":"No order with this id"})
+        else:
+            order = Orderitem.objects.filter(order__user = request.user)
          
         serialzer = OrderItemserializer(order,many=True)
         return Response(serialzer.data,status=status.HTTP_200_OK)
